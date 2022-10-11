@@ -14,6 +14,8 @@ A melhor é a que o seu time utiliza.
 import { css} from '@emotion/css';
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import Input from "../Form/Input";
+import Button from "../Form/Button";
 
 //styled-components;
 const HeaderPage = styled.header`
@@ -48,24 +50,8 @@ li:hover {
 `;
 
 
-const SearchBar = styled.input `
-    border: none;
-    border-radius: 10px;
-    padding: 2px 10px;
-    height: 30px;
-`;
-const SearchButton = styled.button `
-    border: none;
-    border-radius: 10px;
-    height: 30px;
-    margin-left: 5px;
-    color: #333;
-    background: linear-gradient(150deg, #ffeb84 0%, #ffd53e 100%);
-    box-shadow: 0px 2px 5px -1px rgb(59, 59, 59, 0.5);
-    &:hover {
-    background: orange;
-    }
-`;
+
+
 type HeaderProps = {
     pesquisar ?: string;
     menu ?: Array<string>;
@@ -100,8 +86,8 @@ export default function Header(props:HeaderProps) {
             </ul>
         </NavMenu>
             <div>
-                <SearchBar type="text" placeholder="Digite sua busca" />
-                <SearchButton>{props.pesquisar?props.pesquisar:"Search"}</SearchButton>
+                <Input type="text" placeholder="Digite sua busca" />
+                <Button disabled>{props.pesquisar?props.pesquisar:"Search"}</Button>
 
             </div>
 
